@@ -41,7 +41,7 @@ function NavBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            E-Commerce
           </Typography>
           <Button color="inherit" onClick={handleLogin}>
             Login
