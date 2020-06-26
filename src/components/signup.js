@@ -10,6 +10,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Redirect,BrowserRouter as Router } from 'react-router-dom';
 const serverPort="http://localhost:5000/"
 
 function Copyright() {
@@ -45,9 +46,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function SignUp(props) {
   const classes = useStyles();
-  const handleSubmit=(evt)=>{
+  function handleSubmit(evt){
     evt.preventDefault()
     const name=document.getElementById("name").value;
     const email=document.getElementById("email").value;
@@ -74,6 +75,7 @@ export default function SignUp() {
       {
           console.log("Signed Up");
           err.innerHTML=""
+          props.history.push("/signin")
       }
       else
         {
