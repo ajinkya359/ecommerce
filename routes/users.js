@@ -68,6 +68,7 @@ router.post("/signup", (req, res) => {
 });
 router.post("/signin", (req, res) => {
   const { email, password } = req.body;
+  console.log([email])
   mySqlConnection.query(
     "select * from users where email=?",
     [email],
