@@ -23,7 +23,7 @@ app.use(
 
 const PORT = 5000;
 
-app.use("/home",require("../routes/products"));
+app.use("/allProducts",require("../routes/products"));
 app.use("/", require("../routes/users"));
 app.use("*", (req, res) => {
   res.send("You did something wrong man");
